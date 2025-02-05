@@ -4,5 +4,10 @@ import tailwindcss from "tailwindcss"; // Correctly import tailwindcss
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss], // Remove parentheses from tailwindcss
+  plugins: [react()], // Use the react plugin correctly
+  css: {
+    postcss: {
+      plugins: [tailwindcss], // Add tailwindcss as a PostCSS plugin
+    },
+  },
 });
